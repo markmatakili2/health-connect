@@ -1,0 +1,4 @@
+[workspace]
+members = [
+    "src/health_connect_backend",
+]

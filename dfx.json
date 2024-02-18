@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "health_connect_backend": {
+      "candid": "src/health_connect_backend/health_connect_backend.did",
+      "package": "health_connect_backend",
+      "type": "rust"
+    },
+    "health_connect_frontend": {
+      "dependencies": [
+        "health_connect_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/health_connect_frontend/src/index.html"
+      },
+      "source": [
+        "src/health_connect_frontend/assets",
+        "dist/health_connect_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
