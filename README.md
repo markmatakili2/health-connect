@@ -1,61 +1,56 @@
-# health_connect
+# Health Connect Project
 
-Welcome to your new health_connect project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+Welcome to the Health Connect project! This project is designed to streamline remote healthcare services through blockchain technology, focusing on Internet Computer Protocol (ICP) for secure and efficient operations. Health Connect offers a range of key features to facilitate seamless communication, appointment management, health record maintenance, event scheduling, and doctor search functionalities.
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+## Key Features
 
-To learn more before you start working with health_connect, see the following documentation available online:
+### 1. Internet Identity Authorization
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Rust Canister Development Guide](https://internetcomputer.org/docs/current/developer-docs/backend/rust/)
-- [ic-cdk](https://docs.rs/ic-cdk)
-- [ic-cdk-macros](https://docs.rs/ic-cdk-macros)
-- [Candid Introduction](https://internetcomputer.org/docs/current/developer-docs/backend/candid/)
+Health Connect implements Internet Identity Authorization, providing a secure authentication mechanism for users accessing the platform. With Internet Identity, users can authenticate themselves securely, enhancing the overall security and privacy of the system. (This feature is currently not in our code due to the failure of cushing of the laptop that had the whole functioning code. We'll implement it soon.)
 
-If you want to start working on your project right away, you might want to try the following commands:
+### 2. Registration Canisters
 
-```bash
-cd health_connect/
-dfx help
-dfx canister --help
-```
+Registration Canisters serve as the backbone for user onboarding onto the Health Connect platform. Through registration canisters, users can create accounts securely, gaining access to various features and functionalities provided by Health Connect.
 
-## Running the project locally
+### 3. Appointment Canister
 
-If you want to test your project locally, you can use the following commands:
+The Appointment Canister is a core component of Health Connect, allowing users to schedule, manage, and track appointments with healthcare providers remotely. Users can browse available appointment slots, book appointments, and receive confirmations instantly, simplifying the appointment scheduling process.
 
-```bash
-# Starts the replica, running in the background
-dfx start --background
+### 4. Health Record Management
 
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy
-```
+Health Connect offers robust health record management capabilities, leveraging blockchain technology for secure storage and retrieval of health records. Users can update, delete, and retrieve their health records seamlessly, ensuring data integrity and privacy throughout the process.
+This will be possible whereby a form will be created on the docto'r front end, they fill the health report and attach it with the patient's username. Once it's send to the blockchain, the data is stored on the respective patient's history page.
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
+### 5. Event Creation, Updating, and Deleting
 
-If you have made changes to your backend canister, you can generate a new candid interface with
+Users have the ability to create, update, and delete events related to their healthcare needs within the Health Connect platform. This feature will enable individuals or organizations to collect data from patient's who will be willing to share to them for data analysis purposes, at a fee in benefit to the patient
 
-```bash
-npm run generate
-```
+## 6. Search field
 
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
+Health Connect features a comprehensive doctor search functionality, enabling users to find healthcare providers based on various criteria such as specialty, location, availability, and patient reviews. The search feature enhances accessibility and helps users connect with suitable healthcare professionals.
 
-If you are making frontend changes, you can start a development server with
+## Note
 
-```bash
-npm start
-```
+More features are to be added including connection to crypto wallets to enable payment of services among users.
 
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
+## Getting Started
 
-### Note on frontend environment variables
+To begin using Health Connect, follow these steps:
 
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
+1. Clone the repository to your local machine.
+2. Run npm install
+3. Run dfx start
+4. Open a separate ternminal and run dfx deploy
+5. Click on the front end canister link to start interacting with the canisters.
 
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
+**Note:**The actual code for this project has not been uploaded due to the crashing of the laptop bearing the final code. However, we've deployed the front end in vercel. The link to it is https://doctor-patient-application-7edw.vercel.app/ . 
+To land on patient's user page, use this link https://doctor-patient-application-7edw.vercel.app/home.html .
+To access the doctor's page, use this link https://doctor-patient-application-7edw.vercel.app/doctor.html .
+We apologise for this inconvinience but we hope to fix it as soon as possible
+
+## Contributing
+
+Contributions to Health Connect are highly appreciated! If you have any ideas for enhancements, new features, or bug fixes, please feel free to open an issue or submit a pull request. Your contributions can help make remote healthcare services more accessible and efficient for users worldwide.
+
+
+Thank you for choosing Health Connect to enhance remote healthcare services. We hope this project contributes to improving healthcare accessibility and patient outcomes globally.
